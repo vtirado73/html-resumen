@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumen de etiquetas HTML</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 6px;
+      margin-top: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+    }
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    table th {
+      background: #007bff;
+      color: #fff;
+    }
+    code {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.85em;
+      line-height: 1.5;
+      margin: 0;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+    }
+    hr {
+      margin: 24px 0;
+    }
+    figure {
+      margin: 0;
+    }
+    .intro {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .ejemplo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 12px 0;
+    }
+    .ejemplo-izq {
+      border-left: 4px solid #28a745;
+      background: #f0fff0;
+      padding: 10px 16px;
+    }
+    .ejemplo-der {
+      border-left: 4px solid #007bff;
+      background: #f0f7ff;
+      padding: 10px 16px;
+    }
+    .ejemplo-der p {
+      margin: 0 0 6px 0;
+    }
+    .etiqueta-codigo {
+      color: #569cd6;
+    }
+    .etiqueta-atributo {
+      color: #9cdcfe;
+    }
+    .etiqueta-valor {
+      color: #ce9178;
+    }
+    .etiqueta-comentario {
+      color: #6a9955;
+    }
+    .etiqueta-texto {
+      color: #d4d4d4;
+    }
+    @media (max-width: 750px) {
+      .ejemplo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Resumen de etiquetas HTML</h1>
+    <p class="intro">
+      Este documento es un resumen visual de las etiquetas HTML más utilizadas, organizadas por categorías.
+      Cada sección incluye una tabla de referencia y un ejemplo práctico dividido en dos columnas:
+      a la izquierda se muestra el resultado renderizado y a la derecha el código HTML que lo genera.
+      Está pensado como material de consulta rápida para quienes están aprendiendo HTML desde cero.
+    </p>
+    <p class="intro">
+      Material elaborado para la materia <strong>"Aplicaciones de Diseño, turno noche 2026"</strong>
+      del <strong>Instituto Técnico Boliviano Suizo (TBS)</strong> de la ciudad de <strong>Potosí</strong>,
+      con fines educativos y para que los estudiantes puedan realizar las consultas necesarias cuando lo requieran.
+    </p>
+  </header>
+
+  <main>
+
+    <!-- 1. Estructura básica del documento -->
+    <section>
+      <h2>1. Estructura básica del documento</h2>
+      <table>
+        <tr><th>Etiqueta</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>&lt;html&gt;</code></td><td>Contiene todo el documento HTML.</td></tr>
+        <tr><td><code>&lt;head&gt;</code></td><td>Guarda información interna del documento.</td></tr>
+        <tr><td><code>&lt;title&gt;</code></td><td>Define el título de la pestaña del navegador.</td></tr>
+        <tr><td><code>&lt;body&gt;</code></td><td>Contiene el contenido visible de la página.</td></tr>
+        <tr><td><code>&lt;meta&gt;</code></td><td>Define metadatos del documento.</td></tr>
+        <tr><td><code>&lt;link&gt;</code></td><td>Conecta archivos externos como CSS.</td></tr>
+        <tr><td><code>&lt;style&gt;</code></td><td>Permite escribir CSS dentro del HTML.</td></tr>
+        <tr><td><code>&lt;script&gt;</code></td><td>Permite agregar JavaScript.</td></tr>
+      </table>
+      <p><em>Nota: todo este archivo es el ejemplo de estructura básica. Aquí está el esqueleto mínimo:</em></p>
+      <div class="ejemplo-grid">
+        <div class="ejemplo-izq">
+          <p><strong>Resultado:</strong> página en blanco con título "Mi página" en la pestaña.</p>
+        </div>
+        <div class="ejemplo-der">
+          <p><strong>Código:</strong></p>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mi página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Etiquetas de texto -->
+    <section>
+      <h2>2. Etiquetas de texto</h2>
+      <table>
+        <tr><th>Etiqueta</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></td><td>Títulos y subtítulos.</td></tr>
+        <tr><td><code>&lt;p&gt;</code></td><td>Párrafos.</td></tr>
+        <tr><td><code>&lt;br&gt;</code></td><td>Salto de línea.</td></tr>
+        <tr><td><code>&lt;hr&gt;</code></td><td>Línea horizontal separadora.</td></tr>
+        <tr><td><code>&lt;strong&gt;</code></td><td>Texto importante (negrita semántica).</td></tr>
+        <tr><td><code>&lt;em&gt;</code></td><td>Texto enfatizado (cursiva semántica).</td></tr>
+        <tr><td><code>&lt;b&gt;</code></td><td>Texto en negrita.</td></tr>
+        <tr><td><code>&lt;i&gt;</code></td><td>Texto en cursiva.</td></tr>
+        <tr><td><code>&lt;u&gt;</code></td><td>Texto subrayado.</td></tr>
+        <tr><td><code>&lt;span&gt;</code></td><td>Contenedor en línea para texto.</td></tr>
+      </table>
+      <div class="ejemplo-grid">
+        <div class="ejemplo-izq">
+          <h1>h1 - Título principal</h1>
+          <h2>h2 - Subtítulo</h2>
+          <h3>h3 - Sección</h3>
+          <p>Esto es un <strong>párrafo</strong> con <em>varios</em> estilos <b>inline</b>.<br>Segunda línea con <i>cursiva</i> y <u>subrayado</u>.</p>
+          <hr>
+          <p><span style="color:red">Texto dentro de un span con estilo inline.</span></p>
+        </div>
+        <div class="ejemplo-der">
+          <p><strong>Código:</strong></p>
+          <pre><code>&lt;h1&gt;h1 - Título principal&lt;/h1&gt;
+&lt;h2&gt;h2 - Subtítulo&lt;/h2&gt;
+&lt;h3&gt;h3 - Sección&lt;/h3&gt;
+&lt;p&gt;Esto es un &lt;strong&gt;párrafo&lt;/strong&gt;
+  con &lt;em&gt;varios&lt;/em&gt; estilos
+  &lt;b&gt;inline&lt;/b&gt;.&lt;br&gt;
+Segunda línea con &lt;i&gt;cursiva&lt;/i&gt;
+  y &lt;u&gt;subrayado&lt;/u&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span style="color:red"&gt;Texto
+  dentro de un span&lt;/span&gt;&lt;/p&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Enlaces e imágenes -->
+    <section>
+      <h2>3. Enlaces e imágenes</h2>
+      <table>
+        <tr><th>Etiqueta</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>&lt;a&gt;</code></td><td>Crear enlaces.</td></tr>
+        <tr><td><code>&lt;img&gt;</code></td><td>Mostrar imágenes.</td></tr>
+        <tr><td><code>&lt;figure&gt;</code></td><td>Agrupar imágenes o contenido multimedia.</td></tr>
+        <tr><td><code>&lt;figcaption&gt;</code></td><td>Texto descriptivo para una imagen.</td></tr>
+      </table>
+      <div class="ejemplo-grid">
+        <div class="ejemplo-izq">
+          <p>Visita el sitio del <a href="https://tbs.edu.bo/" target="_blank">Instituto Técnico Boliviano Suizo (TBS)</a> (se abre en nueva pestaña).</p>
+          <figure>
+            <img src="https://tbs.edu.bo/wp-content/uploads/2022/04/Recurso-7.svg" alt="Logo TBS" style="max-width:100%;height:80px">
+            <figcaption>Imagen de ejemplo con <code>&lt;figcaption&gt;</code>.</figcaption>
+          </figure>
+        </div>
+        <div class="ejemplo-der">
+          <p><strong>Código:</strong></p>
+          <pre><code>&lt;p&gt;Visita &lt;a href="https://tbs.edu.bo/"
+  target="_blank"&gt;TBS&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src="https://tbs.edu.bo/wp-content
+    /uploads/2022/04/Recurso-7.svg"
+    alt="Logo TBS"&gt;
+  &lt;figcaption&gt;Texto descriptivo&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Listas -->
+    <section>
+      <h2>4. Listas</h2>
+      <table>
+        <tr><th>Etiqueta</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>&lt;ul&gt;</code></td><td>Lista desordenada.</td></tr>
+        <tr><td><code>&lt;ol&gt;</code></td><td>Lista ordenada.</td></tr>
+        <tr><td><code>&lt;li&gt;</code></td><td>Elemento de lista.</td></tr>
+        <tr><td><code>&lt;dl&gt;</code></td><td>Lista descriptiva.</td></tr>
+        <tr><td><code>&lt;dt&gt;</code></td><td>Término de descripción.</td></tr>
+        <tr><td><code>&lt;dd&gt;</code></td><td>Descripción del término.</td></tr>
+      </table>
+      <div class="ejemplo-grid">
+        <div class="ejemplo-izq">
+          <h3>Lista desordenada (ul)</h3>
+          <ul>
+            <li>Manzana</li>
+            <li>Banana</li>
+            <li>Cereza</li>
+          </ul>
+          <h3>Lista ordenada (ol)</h3>
+          <ol>
+            <li>Primero</li>
+            <li>Segundo</li>
+            <li>Tercero</li>
+          </ol>
+          <h3>Lista descriptiva (dl)</h3>
+          <dl>
+            <dt>HTML</dt>
+            <dd>Lenguaje de marcado para la web.</dd>
+            <dt>CSS</dt>
+            <dd>Lenguaje de estilos visuales.</dd>
+          </dl>
+        </div>
+        <div class="ejemplo-der">
+          <p><strong>Código:</strong></p>
+          <pre><code>&lt;ul&gt;
+  &lt;li&gt;Manzana&lt;/li&gt;
+  &lt;li&gt;Banana&lt;/li&gt;
+  &lt;li&gt;Cereza&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Primero&lt;/li&gt;
+  &lt;li&gt;Segundo&lt;/li&gt;
+  &lt;li&gt;Tercero&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Lenguaje de marcado&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Lenguaje de estilos&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Tablas -->
+    <section>
+      <h2>5. Tablas</h2>
+      <table>
+        <tr><th>Etiqueta</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>&lt;table&gt;</code></td><td>Crear una tabla.</td></tr>
+        <tr><td><code>&lt;tr&gt;</code></td><td>Fila de la tabla.</td></tr>
+        <tr><td><code>&lt;td&gt;</code></td><td>Celda de datos.</td></tr>
+        <tr><td><code>&lt;th&gt;</code></td><td>Celda de encabezado.</td></tr>
+        <tr><td><code>&lt;thead&gt;</code></td><td>Encabezado de la tabla.</td></tr>
+        <tr><td><code>&lt;tbody&gt;</code></td><td>Cuerpo de la tabla.</td></tr>
+        <tr><td><code>&lt;tfoot&gt;</code></td><td>Pie de la tabla.</td></tr>
+      </table>
+      <div class="ejemplo-grid">
+        <div class="ejemplo-izq">
+          <table>
+            <thead>
+              <tr><th>Nombre</th><th>Edad</th><th>Ciudad</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Juan</td><td>20</td><td>Madrid</td></tr>
+              <tr><td>Ana</td><td>25</td><td>Barcelona</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="3">Total: 2 personas</td></tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="ejemplo-der">
+          <p><strong>Código:</strong></p>
+          <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Edad&lt;/th&gt;
+      &lt;th&gt;Ciudad&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Juan&lt;/td&gt;
+      &lt;td&gt;20&lt;/td&gt;
+      &lt;td&gt;Madrid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;Barcelona&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="3"&gt;Total: 2 personas&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Formularios -->
+    <section>
+      <h2>6. Formularios</h2>
+      <table>
+        <tr><th>Etiqueta</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>&lt;form&gt;</code></td><td>Crear formularios.</td></tr>
+        <tr><td><code>&lt;input&gt;</code></td><td>Campo de entrada.</td></tr>
+        <tr><td><code>&lt;label&gt;</code></td><td>Texto descriptivo del campo.</td></tr>
+        <tr><td><code>&lt;button&gt;</code></td><td>Botón.</td></tr>
+        <tr><td><code>&lt;textarea&gt;</code></td><td>Área de texto grande.</td></tr>
+        <tr><td><code>&lt;select&gt;</code></td><td>Lista desplegable.</td></tr>
+        <tr><td><code>&lt;option&gt;</code></td><td>Opción dentro del select.</td></tr>
+        <tr><td><code>&lt;fieldset&gt;</code></td><td>Agrupa elementos del formulario.</td></tr>
+        <tr><td><code>&lt;legend&gt;</code></td><td>Título del grupo del formulario.</td></tr>
+      </table>
+      <div class="ejemplo-grid">
+        <div class="ejemplo-izq">
+          <form action="#" method="get">
+            <fieldset>
+              <legend>Datos personales</legend>
+              <p>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+              </p>
+              <p>
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="3" cols="30"></textarea>
+              </p>
+              <p>
+                <label for="pais">País:</label>
+                <select id="pais" name="pais">
+                  <option value="">Selecciona...</option>
+                  <option value="mx">México</option>
+                  <option value="es">España</option>
+                  <option value="ar">Argentina</option>
+                </select>
+              </p>
+              <p><button type="submit">Enviar</button></p>
+            </fieldset>
+          </form>
+        </div>
+        <div class="ejemplo-der">
+          <p><strong>Código:</strong></p>
+          <pre><code>&lt;form action="#" method="get"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Datos personales&lt;/legend&gt;
+
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" id="nombre"&gt;
+
+    &lt;label for="mensaje"&gt;Mensaje:&lt;/label&gt;
+    &lt;textarea id="mensaje" rows="3"&gt;&lt;/textarea&gt;
+
+    &lt;label for="pais"&gt;País:&lt;/label&gt;
+    &lt;select id="pais"&gt;
+      &lt;option&gt;Selecciona...&lt;/option&gt;
+      &lt;option value="mx"&gt;México&lt;/option&gt;
+      &lt;option value="es"&gt;España&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Etiquetas semánticas HTML5 -->
+    <section>
+      <h2>7. Etiquetas semánticas HTML5</h2>
+      <table>
+        <tr><th>Etiqueta</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>&lt;header&gt;</code></td><td>Encabezado de página o sección.</td></tr>
+        <tr><td><code>&lt;nav&gt;</code></td><td>Menú de navegación.</td></tr>
+        <tr><td><code>&lt;section&gt;</code></td><td>Sección del documento.</td></tr>
+        <tr><td><code>&lt;article&gt;</code></td><td>Contenido independiente.</td></tr>
+        <tr><td><code>&lt;aside&gt;</code></td><td>Contenido lateral o secundario.</td></tr>
+        <tr><td><code>&lt;main&gt;</code></td><td>Contenido principal.</td></tr>
+        <tr><td><code>&lt;footer&gt;</code></td><td>Pie de página.</td></tr>
+      </table>
+      <div class="ejemplo-grid">
+        <div class="ejemplo-izq">
+          <p><em>Este archivo completo usa <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> y <code>&lt;section&gt;</code> como ejemplo en vivo:</em></p>
+          <article style="border:1px solid #ccc;padding:12px;border-radius:6px;">
+            <h3>Artículo de ejemplo</h3>
+            <p>Este es un <code>&lt;article&gt;</code> que podría ser una entrada de blog.</p>
+          </article>
+          <aside style="background:#f0f0f0;padding:10px;margin-top:10px;border-radius:6px;">
+            <p><strong>&lt;aside&gt;</strong> — contenido complementario.</p>
+          </aside>
+          <nav>
+            <p><strong>&lt;nav&gt;</strong> — <a href="#">Inicio</a> | <a href="#">Blog</a> | <a href="#">Contacto</a></p>
+          </nav>
+        </div>
+        <div class="ejemplo-der">
+          <p><strong>Código:</strong></p>
+          <pre><code>&lt;header&gt;
+  &lt;h1&gt;Mi sitio web&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;a href="#"&gt;Inicio&lt;/a&gt;
+  &lt;a href="#"&gt;Blog&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Sección&lt;/h2&gt;
+    &lt;article&gt;
+      &lt;h3&gt;Artículo&lt;/h3&gt;
+      &lt;p&gt;Contenido...&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;aside&gt;
+      &lt;p&gt;Nota lateral&lt;/p&gt;
+    &lt;/aside&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;Pie de página&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Multimedia -->
+    <section>
+      <h2>8. Multimedia</h2>
+      <table>
+        <tr><th>Etiqueta</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>&lt;audio&gt;</code></td><td>Reproducir audio.</td></tr>
+        <tr><td><code>&lt;video&gt;</code></td><td>Reproducir video.</td></tr>
+        <tr><td><code>&lt;source&gt;</code></td><td>Fuente de audio o video.</td></tr>
+        <tr><td><code>&lt;iframe&gt;</code></td><td>Insertar otra página web.</td></tr>
+      </table>
+      <div class="ejemplo-grid">
+        <div class="ejemplo-izq">
+          <p>Reproductor de video (sin archivo real, se ve el control nativo):</p>
+          <video controls width="100%" height="auto">
+            <source src="video-ejemplo.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento video.
+          </video>
+          <p>Reproductor de audio:</p>
+          <audio controls>
+            <source src="audio-ejemplo.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento audio.
+          </audio>
+          <p>iframe insertando un sitio externo:</p>
+          <iframe src="https://example.com" width="100%" height="180" style="border:1px solid #ccc;"></iframe>
+        </div>
+        <div class="ejemplo-der">
+          <p><strong>Código:</strong></p>
+          <pre><code>&lt;video controls width="100%"&gt;
+  &lt;source src="video.mp4"
+    type="video/mp4"&gt;
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3"
+    type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;iframe src="https://example.com"
+  width="100%" height="200"&gt;
+&lt;/iframe&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Contenedores y organización -->
+    <section>
+      <h2>9. Contenedores y organización</h2>
+      <table>
+        <tr><th>Etiqueta</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>&lt;div&gt;</code></td><td>Contenedor genérico en bloque.</td></tr>
+        <tr><td><code>&lt;span&gt;</code></td><td>Contenedor en línea.</td></tr>
+      </table>
+      <div class="ejemplo-grid">
+        <div class="ejemplo-izq">
+          <div style="background:#e3f2fd;padding:16px;border-radius:6px;">
+            <p>Este bloque completo es un <code>&lt;div&gt;</code> con fondo azul claro.</p>
+            <p>Aquí hay un <span style="font-weight:bold;color:#d32f2f;">span en rojo negrita</span> dentro de un párrafo.</p>
+          </div>
+        </div>
+        <div class="ejemplo-der">
+          <p><strong>Código:</strong></p>
+          <pre><code>&lt;div style="background:#e3f2fd;
+  padding:16px"&gt;
+  &lt;p&gt;Texto dentro del div&lt;/p&gt;
+  &lt;p&gt;Aquí hay un
+    &lt;span style="color:red"&gt;
+      span en rojo
+    &lt;/span&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Etiquetas útiles modernas -->
+    <section>
+      <h2>10. Etiquetas útiles modernas</h2>
+      <table>
+        <tr><th>Etiqueta</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>&lt;details&gt;</code></td><td>Mostrar/ocultar contenido.</td></tr>
+        <tr><td><code>&lt;summary&gt;</code></td><td>Título visible de <code>&lt;details&gt;</code>.</td></tr>
+        <tr><td><code>&lt;mark&gt;</code></td><td>Resaltar texto.</td></tr>
+        <tr><td><code>&lt;progress&gt;</code></td><td>Barra de progreso.</td></tr>
+        <tr><td><code>&lt;meter&gt;</code></td><td>Indicador de medida.</td></tr>
+        <tr><td><code>&lt;canvas&gt;</code></td><td>Área de dibujo con JavaScript.</td></tr>
+      </table>
+      <div class="ejemplo-grid">
+        <div class="ejemplo-izq">
+          <details>
+            <summary>Haz clic para ver más información</summary>
+            <p>Este contenido estaba oculto. Usamos <code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code>.</p>
+          </details>
+          <p>Texto con <mark>mark resaltado</mark> como si usaras marcatextos.</p>
+          <p>Progreso: <progress value="70" max="100">70%</progress></p>
+          <p>Medida: <meter value="0.8" min="0" max="1" optimum="0.9">80%</meter> (80% de capacidad)</p>
+          <canvas id="lienzo" width="200" height="80" style="border:1px solid #333;display:block;margin-top:8px;"></canvas>
+          <script>
+            var c = document.getElementById('lienzo');
+            var ctx = c.getContext('2d');
+            ctx.fillStyle = '#007bff';
+            ctx.fillRect(10, 10, 180, 60);
+            ctx.fillStyle = '#fff';
+            ctx.font = '16px Arial';
+            ctx.fillText('Canvas', 70, 50);
+          </script>
+        </div>
+        <div class="ejemplo-der">
+          <p><strong>Código:</strong></p>
+          <pre><code>&lt;details&gt;
+  &lt;summary&gt;Ver más&lt;/summary&gt;
+  &lt;p&gt;Texto oculto&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;p&gt;Texto con &lt;mark&gt;resaltado&lt;/mark&gt;&lt;/p&gt;
+
+&lt;progress value="70" max="100"&gt;&lt;/progress&gt;
+
+&lt;meter value="0.8" min="0" max="1"&gt;&lt;/meter&gt;
+
+&lt;canvas id="lienzo" width="200"
+  height="80"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var c = document.getElementById('lienzo');
+  var ctx = c.getContext('2d');
+  ctx.fillStyle = '#007bff';
+  ctx.fillRect(10, 10, 180, 60);
+&lt;/script&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <hr>
+
+  <footer>
+    <p>Resumen creado con fines educativos para la materia <strong>"Aplicaciones de Diseño, turno noche 2026"</strong> del <strong>Instituto Técnico Boliviano Suizo (TBS)</strong> — Potosí.</p>
+  </footer>
+
+</body>
+</html>
